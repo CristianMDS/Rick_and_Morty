@@ -1,8 +1,9 @@
 <?php
 
 require "../controller/guardarController.php";
+
 header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Origin: POST');
 
 
 class GuardarDatos{
@@ -40,7 +41,6 @@ if($_POST["accion"] == "Ejecutar" && !empty($_POST["accion"])){
     $response = $obj->almacenarDatos();
 
     echo $response;
-
 }
 
 

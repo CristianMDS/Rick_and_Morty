@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>API Rick and Morty</title>
 </head>
 <body>
@@ -17,6 +18,7 @@
     </div>
     <div class="options">
         <button id="save">Guardar</button>
+        <button id="view">Ver Datos</button>
     </div>
     <div class="catalogo">
     </div>

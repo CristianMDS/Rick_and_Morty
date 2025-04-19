@@ -47,29 +47,52 @@ $(document).ready(function () {
             paginaActual++;
             api(paginaActual);
         }
-    });    
+    });
+    
+    let view = document.getElementById('view');
+    view.addEventListener('click', () => {
+        window.open("./views/mostrarView.php", "Personajes Almacenados");
+    });
     
     let save = document.getElementById('save');
     save.addEventListener('click', () => {
-        let conf = confirm("Desea guardar 100 registros en la base de datos");
-        if(conf){
-            $.ajax({
-                url: '../Rick_and_Morty/model/guardarModel.php',
-                type: 'POST',
-                data: { accion: 'Ejecutar' },
-                success: function(respuesta) {
-                    console.log('Respuesta:', respuesta);
-                },
-                error: function(error) {
-                    // console.error('Error: ', error);
-                }
-            });
-        }
+        Swal.fire({
+            icon: "info",
+            title: "¿Desea almacenar los 100 personajes?",
+            showDenyButton: true,
+            confirmButtonText: "Si",
+            denyButtonText: "No"
+        }).then((r) =>{
+            if(r.isConfirmed){
+                $.ajax({
+                    url: './model/guardarModel.php',
+                    type: 'POST',
+                    data: { accion: 'Ejecutar' },
+                    success: function(respuesta) {
+                        console.log(respuesta)
+                        if(respuesta.trim() === "Creado"){
+                            Swal.fire({
+                                icon:"success",
+                                title:"¡EXITOSO!",
+                                text: "Los 100 personajes se almacenaron correctamente"
+                            });
+                        }
+                        if(respuesta.trim() === "Datos"){
+                            Swal.fire({
+                                icon:"error",
+                                title:"¡ERROR!",
+                                text: "Los 100 personajes ya se almacenaron"
+                            });
+                        }
+                    }
+                });
+            }
+        })
     });
     
     api(paginaActual);
 });
 
 function detalle(id, name){
-    window.open(`./detalle.php?id=${id}`, `Detalle de ${name}`, "width=380, height=500, left=100, top=100");
+    window.open(`./views/detalleView.php?id=${id}`, `Detalle de ${name}`, "width=380, height=500, left=100, top=100");
 }
