@@ -64,12 +64,24 @@ $(document).ready(function () {
             denyButtonText: "No"
         }).then((r) =>{
             if(r.isConfirmed){
+
+                const loadingAlert = Swal.fire({
+                    title: 'Cargando...',
+                    html: 'Por favor, espere un momento.',
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+
                 $.ajax({
                     url: './model/guardarModel.php',
                     type: 'POST',
                     data: { accion: 'Ejecutar' },
                     success: function(respuesta) {
-                        console.log(respuesta)
+
+                        Swal.close();
+                        
                         if(respuesta.trim() === "Creado"){
                             Swal.fire({
                                 icon:"success",
@@ -79,13 +91,17 @@ $(document).ready(function () {
                         }
                         if(respuesta.trim() === "Datos"){
                             Swal.fire({
-                                icon:"error",
-                                title:"¡ERROR!",
+                                icon:"warning",
+                                title:"¡Archivos almacenados!",
                                 text: "Los 100 personajes ya se almacenaron"
                             });
                         }
                     }
                 });
+
+                setTimeout(() => {
+                    Swal.close();
+                }, 6000);
             }
         })
     });
