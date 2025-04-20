@@ -1,6 +1,6 @@
 <?php
 
-require "../controller/guardarController.php";
+require "../../src/controller/guardarController.php";
 
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: POST');

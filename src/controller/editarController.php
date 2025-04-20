@@ -22,7 +22,7 @@ class EditarDatosController{
 
         $html = "";
         foreach($stmt->fetchAll() as $dato){
-            $html .= "<h1>Editar a ".$dato['character_name']."</h1><form method='POST' action='../model/actualizarModel.php'>";
+            $html .= "<h1>Editar a ".$dato['character_name']."</h1><form method='POST' action='../../src/model/actualizarModel.php'>";
                 $html .= "<label for='character_name'>Nombre del Personaje: </label>
                             <input type='text' name='character_name' value='".$dato["character_name"]."' />";
                 $html .= "<label for='character_status'>Estado del Personaje: </label>

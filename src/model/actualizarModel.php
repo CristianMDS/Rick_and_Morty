@@ -1,6 +1,6 @@
 <?php
 
-require_once "../controller/actualizarController.php";
+require_once "../../src/controller/actualizarController.php";
 
 header('Access-Control-Allow-Origin: POST');
 

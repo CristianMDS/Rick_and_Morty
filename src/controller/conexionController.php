@@ -3,7 +3,7 @@
 class Conexion{
     function conexion(){
         try {
-            $pdo = new PDO('mysql: host=localhost; dbname=rick_and_morty', 'root', '');
+            $pdo = new PDO('mysql: host=127.0.0.1; dbname=rick_and_morty', 'root', '');
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
             return $pdo;

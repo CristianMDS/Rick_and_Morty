@@ -51,7 +51,7 @@ $(document).ready(function () {
     
     let view = document.getElementById('view');
     view.addEventListener('click', () => {
-        window.open("./views/mostrarView.php", "Personajes Almacenados");
+        window.open("./public/views/mostrarView.php", "Personajes Almacenados");
     });
 
     let reload = document.getElementById('reload');
@@ -67,7 +67,7 @@ $(document).ready(function () {
             if(r.isConfirmed){
 
                 $.ajax({
-                    url: './model/reiniciarModel.php',
+                    url: './src/model/reiniciarModel.php',
                     type: 'POST',
                     data: { accion: 'Ejecutar' },
                     success: function(respuesta) {
@@ -106,7 +106,7 @@ $(document).ready(function () {
                 });
 
                 $.ajax({
-                    url: './model/guardarModel.php',
+                    url: './src/model/guardarModel.php',
                     type: 'POST',
                     data: { accion: 'Ejecutar' },
                     success: function(respuesta) {
@@ -139,5 +139,5 @@ $(document).ready(function () {
 });
 
 function detalle(id, name){
-    window.open(`./views/detalleView.php?id=${id}`, `Detalle de ${name}`, "width=380, height=500, left=100, top=100");
+    window.open(`./public/views/detalleView.php?id=${id}`, `Detalle de ${name}`, "width=380, height=500, left=100, top=100");
 }

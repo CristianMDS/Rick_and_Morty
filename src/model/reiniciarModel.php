@@ -3,7 +3,7 @@
 
 header('Access-Control-Allow-Origin: POST');
 
-require "../controller/reiniciarController.php";
+require "../../src/controller/reiniciarController.php";
 
 class ReiniciarDatosModel{
     public function reiniciarDatos(){
