@@ -17,9 +17,9 @@
         <button id="next">></button>
     </div>
     <div class="options">
-        <button id="save">Guardar</button>
+        <button id="save">Guardar DB</button>
         <button id="view">Ver Datos</button>
-        <button id="reload">Reiniciar</button>
+        <button id="reload">Reiniciar DB</button>
     </div>
     <div class="catalogo">
     </div>
