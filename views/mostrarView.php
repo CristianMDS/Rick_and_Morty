@@ -21,7 +21,7 @@
                 <th>TIPO</th>
                 <th>GENERO</th>
                 <th>ORIGEN</th>
-                <th>LUGAR ACTUAL</th>
+                <th>UBICACION</th>
                 <th>EDITAR</th>
             </tr>
         </thead>

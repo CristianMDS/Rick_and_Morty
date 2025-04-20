@@ -53,6 +53,37 @@ $(document).ready(function () {
     view.addEventListener('click', () => {
         window.open("./views/mostrarView.php", "Personajes Almacenados");
     });
+
+    let reload = document.getElementById('reload');
+    reload.addEventListener('click', () => {
+        Swal.fire({
+            icon: "info",
+            title: "¿Desea reiniciar la base de datos?",
+            showDenyButton: true,
+            confirmButtonText: "Si",
+            denyButtonText: "No"
+
+        }).then((r) => {
+            if(r.isConfirmed){
+
+                $.ajax({
+                    url: './model/reiniciarModel.php',
+                    type: 'POST',
+                    data: { accion: 'Ejecutar' },
+                    success: function(respuesta) {
+                        console.log(respuesta);
+                        if(respuesta == "Eliminada"){
+                            Swal.fire({
+                                icon:"success",
+                                title:"¡EXITOSO!",
+                                text: "Los 100 personajes se eliminaron de la base de datos"
+                            });
+                        }
+                    }
+                });
+            }
+        });
+    });
     
     let save = document.getElementById('save');
     save.addEventListener('click', () => {
@@ -79,8 +110,6 @@ $(document).ready(function () {
                     type: 'POST',
                     data: { accion: 'Ejecutar' },
                     success: function(respuesta) {
-
-                        Swal.close();
                         
                         if(respuesta.trim() === "Creado"){
                             Swal.fire({
@@ -101,7 +130,7 @@ $(document).ready(function () {
 
                 setTimeout(() => {
                     Swal.close();
-                }, 6000);
+                }, 12000);
             }
         })
     });

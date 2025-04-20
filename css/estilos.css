@@ -90,7 +90,7 @@ h1 {
     all:unset;
     background-color: #96cee8;
     padding:4px;
-    margin: 12px;
+    margin: 8px;
     border-radius: 2px;
     border: 1px solid black;
     cursor: pointer;
@@ -106,6 +106,7 @@ h1 {
     all:unset;
     background-color: #9ee934;
     padding:4px;
+    margin: 8px;
     border-radius: 2px;
     border: 1px solid black;
     cursor: pointer;
@@ -114,6 +115,21 @@ h1 {
 .options #view:hover {
     cursor: pointer;
     background-color: #6bb800;
+    color:black;
+}
+
+.options #reload {
+    all:unset;
+    background-color: rgba(255, 0, 0, 0.589);
+    padding: 4px;
+    border-radius: 2px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.options #reload:hover {
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.829);
     color:black;
 }
 

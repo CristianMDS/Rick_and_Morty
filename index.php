@@ -19,6 +19,7 @@
     <div class="options">
         <button id="save">Guardar</button>
         <button id="view">Ver Datos</button>
+        <button id="reload">Reiniciar</button>
     </div>
     <div class="catalogo">
     </div>

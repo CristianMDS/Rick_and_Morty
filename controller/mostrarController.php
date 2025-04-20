@@ -23,7 +23,7 @@ class MostrarDatosController{
                     $html .= "<td>".$data["gender"]."</td>";
                     $html .= "<td>".$data["origin_name"]."</td>";
                     $html .= "<td>".$data["location_name"]."</td>";
-                    $html .= "<td><button id='".$data['id']."' class='edit'> Editar </button></td>";
+                    $html .= "<td><button id='".$data['id']."' onclick='return editar(this.id)' class='edit'> Editar </button></td>";
                 $html .= "</tr>";
             }
         }
